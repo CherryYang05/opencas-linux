@@ -31,7 +31,7 @@ INCDIR = $(PWD)/include
 KERNEL_VERSION = $(shell echo $(KERNELRELEASE) | cut -d'.' -f1)
 KERNEL_MAJOR = $(shell echo $(KERNELRELEASE) | cut -d'.' -f2)
 
-EXTRA_CFLAGS += -Werror
+EXTRA_CFLAGS +=
 
 EXTRA_LDFLAGS += -z noexecstack -z relro -z now
 

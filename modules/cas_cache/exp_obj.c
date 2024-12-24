@@ -16,6 +16,15 @@
 #include "cas_cache.h"
 #include "debug.h"
 
+#include <linux/version.h>
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 6, 0)
+#define HAVE_SYSFS_EMIT 1
+#endif
+
+#ifndef HAVE_SYSFS_EMIT
+#define sysfs_emit(buf, fmt, ...) snprintf(buf, PAGE_SIZE, fmt, ##__VA_ARGS__)
+#endif
+
 #define CAS_DEV_MINORS 16
 #define KMEM_CACHE_MIN_SIZE sizeof(void *)
 

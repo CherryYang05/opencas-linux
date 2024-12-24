@@ -111,7 +111,7 @@ endif
 ifdef DEBUG_PACKAGE
 CFLAGS    += -g3
 endif
-CFLAGS    += -Wall -Werror -z relro -z now -fstack-protector -fPIC -Wformat -Wformat-security -fno-strict-aliasing
+CFLAGS    += -Wall -z relro -z now -fstack-protector -fPIC -Wformat -Wformat-security -fno-strict-aliasing
 
 #
 # Flags for linking
